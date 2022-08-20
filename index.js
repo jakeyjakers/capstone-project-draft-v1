@@ -1,5 +1,13 @@
 console.log("Test")
 
+//////fake database of player num and races/////////
+const racesArr = ['Arborec', 'Barony Of Letnav', 'Clan Of Saar', 'Embers OF Muatt', 'Emirates Of Haccan', 
+'Federation Of Sol', 'Ghosts Of Creus', 'The L1Z1X Mindnet', 'Mentak Coalition', 'Nallu Collective', 'Nekro Virus', 
+'Sardak N\'orr', 'Universities OF Jol-Nar', 'Winnu', 'The Yinn Brotherhood', 'Yssaril Tribes', 'Argent Flight', 
+'The Empyrean', 'The Mahact Gene-Sorcerers', 'Naaz-Rohka Allience', 'The Nomad', 'The Titans Of Ul', 'The Vul-Wraith Cabal']
+
+const playerAmountArr = [3, 4, 5, 6, 7, 8]
+
 //////////Grabbing all elements to be used in application///////
 
 ////////Archive form/////////////
@@ -51,7 +59,7 @@ const createCard = (event) =>{
     const archiveVictor = document.createElement('h5')
     const archiveParagraph = document.createElement('p')
     archiveCard.classList.add('archive-card')
-////////////////creating elemnts for card///////////////
+////////////////creating elements for card///////////////
 
 /////////////////assigning content to variables///////////////
     // archivePic.src = pic from database or api call
@@ -73,4 +81,31 @@ const createCard = (event) =>{
     cardContainer.appendChild(archiveCard)
 }
 
+//////function to randomly select players form 3-8//////
+const randomGameStart = (event, playerAmountArr, racesArr) =>{
+    event.preventDefault()
+    //we need to somehow take the value of the random plyer input
+
+    let randomPlayerAmount = randNumPlayerInput.value
+
+    //then somehow take that value and grab the races from the racesArr equivalent the randome player input
+
+    let randomItems = (racesArr) =>{
+        return racesArr[Math.floor(Math.random()*randomPlayerAmount)]
+    }
+
+    
+
+    //then assign those races to a seat number
+
+    //then push them to a new variable, 
+
+    //then append that to the DOM
+
+}
+
+////function to randomly choose races based off of random players//////
+
 archiveForm.addEventListener('submit', createCard)
+
+randGenBtn.addEventListener('submit', randomGameStart)
