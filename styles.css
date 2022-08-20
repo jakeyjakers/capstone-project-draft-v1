@@ -1,0 +1,65 @@
+body{
+    box-sizing: border-box;
+    position: relative;
+}
+
+.head{
+    height: 15vh;
+    background-color: aqua;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: palegreen;
+    
+    
+}
+
+.archive-form{
+    width: 45vw;
+    height: 50vh;
+    background-color: #93A8AC;
+    margin: 20px;
+}
+#text-area{
+    max-width: 30vw;
+    max-height: 25vh;
+    min-width: 30vw;
+    max-height: 25vh;
+}
+
+.random-generator{
+    width: 25vw;
+    height: 25vh;
+    background-color: #93A8AC;
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.archive-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 250px;
+    height: 370px;
+    background-color: #93A8AC;
+    border: solid #841A95 2px;
+    border-radius: 3px;
+    margin: 10px;
+}
+.archive-info  {
+    width: 210px;
+    height: 30px;
+    background-color: #4C5760;
+    border: 2px solid #94FBAB;
+    font-size: 13px;
+
+}
