@@ -8,6 +8,8 @@ const racesArr = ['Arborec', 'Barony Of Letnav', 'Clan Of Saar', 'Embers OF Muat
 
 const playerAmountArr = [3, 4, 5, 6, 7, 8]
 
+const racePics = []
+
 //////////Grabbing all elements to be used in application///////
 
 ////////Archive form/////////////
@@ -45,6 +47,12 @@ const randGenBtn = document.getElementById('gen-btn')
 
 ////////////////random game generator form///////////////
 
+////miiscellaneous functions////////
+
+const clearForm = () => {
+    
+}
+
 //////////////////////////////////////////////////////////////
 
 const createCard = (event) =>{
@@ -79,33 +87,72 @@ const createCard = (event) =>{
     archiveCard.appendChild(archiveVictor)
     archiveCard.appendChild(archiveParagraph)
     cardContainer.appendChild(archiveCard)
+
+    clearForm()
 }
 
 //////function to randomly select players form 3-8//////
-const randomGameStart = (event, playerAmountArr, racesArr) =>{
+const randomGameStart = (event) =>{
     event.preventDefault()
+    console.log('test for randomdgamestart')
     //we need to somehow take the value of the random plyer input
 
-    let randomPlayerAmount = randNumPlayerInput.value
-
+    let randomPlayerAmount = +randNumPlayerInput.value
+    let playerArr = []
+    let seatNumber = 1
     //then somehow take that value and grab the races from the racesArr equivalent the randome player input
+    for(let i = 0; i < randomPlayerAmount; i++){
 
-    let randomItems = (racesArr) =>{
-        return racesArr[Math.floor(Math.random()*randomPlayerAmount)]
+
+        let randomlyChosenRaces = racesArr[Math.floor(Math.random()*racesArr.length)]
+
+
+        playerArr.push(`Slice ${seatNumber}, ${randomlyChosenRaces},`)
+
+        seatNumber++
+
+        // return playerArr
+
     }
+    console.log(playerArr)
+    ///loop over playerstr and split it//
 
-    
+    const randomGameCard = document.createElement('div')
+    randomGameCard.classList.add('random-game-card')
+
+    for(let i = 0; i < playerArr.length; i++){
+
+        ///during the loop each substring will be attached to a created element
+        console.log(playerArr[i])
+        let playerInfo = document.createElement('h5')
+        playerInfo.textContent = playerArr[i]
+        console.log(playerInfo)
+        playerInfo.classList.add('random-game-info')
+        // console.log(playerInfo)
+        // let playerInfo = document.createElement('h5').classList.add('random-game-info').textContent = playerArr[i]
+        // console.log(playerInfo)
+        // playerInfo.classList.add('random-game-info')
+
+        // randomGameCard.appendChild(document.createElement('h5').textContent = playerArr[i]).classList.add('random-game-card')
+        
+
+        ///then each element will be appended to the DOM in some fashion. maybe a card, with race pics?
+        randomGameCard.appendChild(playerInfo)
+    }
+    cardContainer.appendChild(randomGameCard)
 
     //then assign those races to a seat number
 
     //then push them to a new variable, 
 
     //then append that to the DOM
+    clearForm()
 
 }
+
 
 ////function to randomly choose races based off of random players//////
 
 archiveForm.addEventListener('submit', createCard)
 
-randGenBtn.addEventListener('submit', randomGameStart)
+randomGenerator.addEventListener('submit', randomGameStart)

@@ -63,3 +63,23 @@ body{
     font-size: 13px;
 
 }
+.random-game-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 250px;
+    height: 370px;
+    background-color: #93A8AC;
+    border: solid #841A95 2px;
+    border-radius: 3px;
+    margin: 10px;
+}
+.random-game-info {
+    width: 210px;
+    height: 30px;
+    background-color: #4C5760;
+    border: 2px solid #94FBAB;
+    font-size: 13px;
+
+}
