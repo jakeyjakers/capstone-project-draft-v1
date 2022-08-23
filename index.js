@@ -47,7 +47,21 @@ const randGenBtn = document.getElementById('gen-btn')
 
 ////////////////random game generator form///////////////
 
+/////dice roller////////
+const diceRollerDisplay = document.getElementById('dice-roller-display')
+
+const diceRollerBtn = document.getElementById('dice-roller-button')
+
 ////miiscellaneous functions////////
+
+const diceRoller = () => {
+   let initiative = Math.floor(Math.random() * 10) +1
+   console.log(initiative)
+    diceRollerDisplay.textContent = `Initiative: ${initiative}`
+//    alert(`You rolled : ${initiative}`)
+}
+
+diceRollerBtn.addEventListener('click', diceRoller)
 
 const clearForm = () => {
     
