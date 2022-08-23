@@ -17,6 +17,20 @@ body{
     align-items: center;
     justify-content: space-between;
 }
+
+.activation-toolbar{
+    height: 10vh;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.activation-button{
+    
+}
 .form-section{
     display: flex;
     justify-content: space-evenly;
@@ -30,6 +44,7 @@ body{
     width: 45vw;
     height: 50vh;
     background-color: #93A8AC;
+    display: none;
     margin: 20px;
 }
 #text-area{
@@ -43,6 +58,7 @@ body{
     width: 25vw;
     height: 25vh;
     background-color: #93A8AC;
+    display: none;
 }
 .main{
     display: flex;
@@ -60,6 +76,7 @@ body{
     border: solid #841A95 2px;
     border-radius: 3px;
     margin: 10px;
+    color: white;
 }
 .archive-info  {
     width: 210px;
@@ -80,6 +97,7 @@ body{
     border: solid #841A95 2px;
     border-radius: 3px;
     margin: 10px;
+    color: white;
 }
 .random-game-info {
     width: 210px;
@@ -96,4 +114,5 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    display: none;
 }

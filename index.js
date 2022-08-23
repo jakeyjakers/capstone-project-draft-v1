@@ -10,6 +10,8 @@ const playerAmountArr = [3, 4, 5, 6, 7, 8]
 
 const racePics = []
 
+const colors = ['Blue', 'Green', 'Yellow', 'Black', 'Orange', 'Pink', 'Purple', 'Red']
+
 //////////Grabbing all elements to be used in application///////
 
 ////////Archive form/////////////
@@ -52,6 +54,16 @@ const diceRollerDisplay = document.getElementById('dice-roller-display')
 
 const diceRollerBtn = document.getElementById('dice-roller-button')
 
+const diceRollerParent = document.querySelector('dice-roller')
+
+/////////display activation buttons////////
+
+const archiveActivationButton = document.getElementById("archive-activation-button")
+
+const diceRollerActivationButton = document.getElementById("dice-roller-activation")
+
+const randomGeneratorActivationButton = document.getElementById("random-generator-button" )
+
 ////miiscellaneous functions////////
 
 const diceRoller = () => {
@@ -63,14 +75,33 @@ const diceRoller = () => {
 
 diceRollerBtn.addEventListener('click', diceRoller)
 
-const clearForm = () => {
-    
+const toggleDisplay = () => {
+    console.log('toggle display test')
+    let x = randomGenerator
+    if (x.style.display = 'none'){
+        x.style.removeProperty('display')
+    } 
+    else {
+        x.style.display = 'none'
+    }
+}
+
+diceRollerActivationButton.addEventListener('click', toggleDisplay)
+
+const clearFormArchive = () => {
+    archiveForm.reset()
+}
+
+const clearFormRandomGenerator = () =>{
+    randomGenerator.reset()
 }
 
 //////////////////////////////////////////////////////////////
 
 const createCard = (event) =>{
     event.preventDefault()
+    ///logic to check if form is even filled out///
+    
 /////////////////////////creating elements for card/////////
     const archiveCard = document.createElement('div')
     const archivePic = document.createElement('img')
@@ -102,7 +133,7 @@ const createCard = (event) =>{
     archiveCard.appendChild(archiveParagraph)
     cardContainer.appendChild(archiveCard)
 
-    clearForm()
+    clearFormArchive()
 }
 
 //////function to randomly select players form 3-8//////
@@ -116,7 +147,9 @@ const randomGameStart = (event) =>{
     let seatNumber = 1
     //then somehow take that value and grab the races from the racesArr equivalent the randome player input
     for(let i = 0; i < randomPlayerAmount; i++){
-
+        
+        //////asign colors to races///////
+        
 
         let randomlyChosenRaces = racesArr[Math.floor(Math.random()*racesArr.length)]
 
@@ -160,7 +193,7 @@ const randomGameStart = (event) =>{
     //then push them to a new variable, 
 
     //then append that to the DOM
-    clearForm()
+    clearFormRandomGenerator()
 
 }
 
