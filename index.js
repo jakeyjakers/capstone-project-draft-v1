@@ -54,7 +54,7 @@ const diceRollerDisplay = document.getElementById('dice-roller-display')
 
 const diceRollerBtn = document.getElementById('dice-roller-button')
 
-const diceRollerParent = document.querySelector('dice-roller')
+const diceRollerParent = document.querySelector('.dice-roller')
 
 /////////display activation buttons////////
 
@@ -64,7 +64,9 @@ const diceRollerActivationButton = document.getElementById("dice-roller-activati
 
 const randomGeneratorActivationButton = document.getElementById("random-generator-button" )
 
-////miiscellaneous functions////////
+//////////////////////miiscellaneous functions//////////////////////////
+
+////////////////////diceroller function//////////////////////
 
 const diceRoller = () => {
    let initiative = Math.floor(Math.random() * 10) +1
@@ -75,18 +77,53 @@ const diceRoller = () => {
 
 diceRollerBtn.addEventListener('click', diceRoller)
 
+///////////////////dice roller display function/////////////////////
+
 const toggleDisplay = () => {
     console.log('toggle display test')
-    let x = randomGenerator
-    if (x.style.display = 'none'){
-        x.style.removeProperty('display')
-    } 
-    else {
+    console.log(diceRollerParent)
+    let x = diceRollerParent
+//    x.classList.toggle('dice-roller')
+    if(x.style.display === "unset") {
+        x.style.display = 'none'
+    } else {
+        x.style.display = 'unset'
+    }
+};
+
+diceRollerActivationButton.addEventListener('click', toggleDisplay)
+
+///////////////////archive form display function////////////////////
+
+const toggleDisplayArchive = () =>{
+    console.log('toggle2 test')
+    console.log(archiveForm)
+    let x = archiveForm
+    if ( x.style.display === 'none') {
+        x.style.display = 'unset'
+    } else {
         x.style.display = 'none'
     }
 }
 
-diceRollerActivationButton.addEventListener('click', toggleDisplay)
+archiveActivationButton.addEventListener('click', toggleDisplayArchive)
+
+////////////////random game generator function/////////////////
+
+const toggleDislpayRandomGenerator = () => {
+    console.log("toggle 3 test")
+    console.log(randomGenerator)
+    let x = randomGenerator
+    if ( x.style.display === 'none') {
+        x.style.display = 'unset'
+    } else {
+        x.style.display = 'none'
+    }
+}
+
+randomGeneratorActivationButton.addEventListener('click', toggleDislpayRandomGenerator)
+
+/////////////////////clear form functions//////////////////////////
 
 const clearFormArchive = () => {
     archiveForm.reset()
